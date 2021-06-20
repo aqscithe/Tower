@@ -1,0 +1,76 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <Platform>x64</Platform>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B6B6990A-C2D8-4296-A7EB-727AA8EAC1BD}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <WindowsTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>include;$(ExternalFolder)\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ExternalFolder)\x86_64-pc-windows-msvc\libs</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gp.lib</AdditionalDependencies>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src/main.cpp" />
+    <ClCompile Include="src\Vector2f.cpp" />
+    <ClCompile Include="src/Resources.cpp" />
+    <ClCompile Include="src/CollisionDetection.cpp" />
+    <ClCompile Include="src/Entity.cpp" />
+    <ClCompile Include="src/Tower.cpp" />
+    <ClCompile Include="src/StandardTower.cpp" />
+    <ClCompile Include="src/Player.cpp" />
+    <ClCompile Include="src/Castle.cpp" />
+    <ClCompile Include="src/SlowingTower.cpp" />
+    <ClCompile Include="src/ExplosiveTower.cpp" />
+    <ClCompile Include="src/Enemy.cpp" />
+    <ClCompile Include="src/WeakEnemy.cpp" />
+    <ClCompile Include="src/StrongEnemy.cpp" />
+    <ClCompile Include="src/HealingEnemy.cpp" />
+    <ClCompile Include="src/Projectile.cpp" />
+    <ClCompile Include="src/Game.cpp" />
+    <ClCompile Include="src/Map.cpp" />
+    <ClCompile Include="src/World.cpp" />
+    <ClCompile Include="src/Grid.cpp" />
+    <ClCompile Include="src/Wave.cpp" />
+    <ClCompile Include="src/WaveManager.cpp" />
+    <ClCompile Include="src/Store.cpp" />
+    <ClCompile Include="src/Health.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Vector2f.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Targets" />
+</Project>

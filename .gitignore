@@ -1,0 +1,7 @@
+x64
+*.user
+.vscode/settings.json
+
+**/*.o
+**/*.d
+tower.exe
