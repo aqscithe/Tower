@@ -1,6 +1,7 @@
 x64
 *.user
 .vscode/settings.json
+.vs/
 
 **/*.o
 **/*.d
